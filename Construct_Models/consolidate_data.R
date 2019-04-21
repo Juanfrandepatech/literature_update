@@ -3,7 +3,7 @@ library(plyr)
 
 data <- read.csv('RYANDATA.csv', stringsAsFactors = F)
 colnames(data)
-colnames(data) <- c('X', 'topic', 'authors', 'title', 'journal', 'year', 'vol_issue', 'doi')
+colnames(data) <- c('V0', 'topic', 'authors', 'title', 'journal', 'year', 'vol_issue', 'doi')
 
 data.complete <- data[(complete.cases(data$topic)),]
 nrow(data.complete)
@@ -31,5 +31,5 @@ nrow(data.complete)
 
 # consolidate data ----
 #save csv of changes above
-write.csv(data.complete, file = 'RYANDATA_consolidated.csv')
+write.csv(data.complete, file = 'RYANDATA_consolidated.csv', row.names = F)
 
